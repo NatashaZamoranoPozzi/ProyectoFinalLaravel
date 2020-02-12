@@ -1,0 +1,46 @@
++Conexión a base de datos: (Durante esta clase utilizaremos la base de datos movies-db.sql en el campus.)
+
++Modificar el archivo .env en el directorio raíz de Laravel con las credenciales de MySQL. Luego reiniciar php artisan serve para que tome los cambios.
+
+Modelos:
+
++Crear un modelo para la tabla Movies.
+
++Crear un modelo para la tabla Genres.
+
++Crear un modelo para la tabla Actors.
+
++Agregar al modelo Actor, el método getNombreCompleto.
+
+
+Acceso a la base de datos:
+        
+
+Crear la ruta /actores, que redirigirá al método ActorController@directory, y retorne la vista actores.blade.php.
+
+En la vista recientemente creada, ingresar un título e ingresar a localhost:8000/actores y verificar que se vea correctamente.
+
+En el controlador recientemente creado, utilizando Eloquent, obtener todos los actores dentro de una variable $actores, y enviarla a la vista. (Se recomienda utilizar el método all. Recordar ingresar la línea “use App\Actor” para importar el modelo)
+
+En la vista actores.blade.php, mostrar una lista de los nombres de los actores utilizando Blade.
+
+Crear la ruta /actor/{id}, que redirigirá al método ActorController@show, y retorne la vista actor.blade.php.
+
+En el controlador ActorController, utilizando Eloquent, obtener el actor en función del ID que recibimos por URL. Guardar el actor en la variable $actor, y enviarla a la vista. (Se recomienda utilizar el método find)
+
+En la vista actor.blade.php, utilizando Blade, mostrar todos los datos del actor.
+
+Modificar la vista actores.blade.php para que el nombre de cada actor sea un link al detalle de los datos de cada actor.
+Buscador:
+
+En la vista actores.blade.php, crear un formulario que tenga únicamente un campo de texto. Este formulario tendrá el objetivo de buscar actores. (Tener en cuenta que el formulario deberá apuntar a la ruta /actores/buscar)
+
+Crear la ruta /actores/buscar, que redirigirá al método ActorController@search, y retorne la vista actores.blade.php.
+
+En el controlador ActorController, utilizando Eloquent, obtener los actores cuyo nombre contenga los caracteres buscados. Guardar el actor en la variable $actores, y enviarla a la vista. (Se recomienda utilizar el método where)
+
+Agregar en actores.blade.php un segundo formulario con el botón “Limpiar”, que envíe a la ruta original sin filtros de búsqueda.
+
+Modificar el resultado de las búsquedas para que muestre el listado de actores ordenados por apellido.
+
+Modificar el listado para que los resultados aparezcan paginados. Modificar todos los controladores necesarios.
